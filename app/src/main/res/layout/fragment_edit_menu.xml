@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.EditMenuFragment"
+    android:background="@color/TryIt_dark_white"
+    android:focusable="true"
+    android:clickable="true"
+    >
+
+    <TextView
+        android:id="@+id/edit_menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:text="Edit Menu"
+        android:textColor="@color/TryIt_brown_light"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/edit_menu_recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginHorizontal="5dp"
+    android:background="@color/TryIt_dark_white"
+    android:padding="10dp"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/edit_menu_title"
+    />
+
+    <TextView
+        android:id="@+id/add_new_food_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/ripple_effect"
+        android:fontFamily="@font/failing_sky"
+        android:layout_marginTop="20dp"
+        android:text="Add New Food"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_menu_recycler_view" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/add_new_food_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/et_style"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_menu_recycler_view"
+        android:layout_marginHorizontal="5dp"
+        android:padding="20dp"
+        >
+
+    <ImageView
+        android:id="@+id/image_food_to_add"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:civ_border_width="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/image_to_add"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/ripple_effect"
+        android:focusable="true"
+        app:tint="#FF7043" />
+    <TextView
+        android:id="@+id/food_type_to_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="30dp"
+        android:text="Food Type"
+        android:textColor="#FF7043"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:fontFamily="@font/circular"
+        android:background="@drawable/ripple_effect"
+        app:layout_constraintStart_toEndOf="@+id/image_food_to_add"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/name_food_to_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:text="Food Name"
+        android:textColor="#FF7043"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:fontFamily="@font/circular"
+        android:background="@drawable/ripple_effect"
+        app:layout_constraintStart_toEndOf="@+id/image_food_to_add"
+        app:layout_constraintTop_toBottomOf="@+id/food_type_to_add" />
+
+    <TextView
+        android:id="@+id/price_food_to_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:text="Price"
+        android:textColor="#FF7043"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:fontFamily="@font/circular"
+        android:background="@drawable/ripple_effect"
+        app:layout_constraintStart_toEndOf="@+id/image_food_to_add"
+        app:layout_constraintTop_toBottomOf="@+id/name_food_to_add" />
+
+    <TextView
+        android:id="@+id/calories_food_to_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:text="Calories"
+        android:textColor="#FF7043"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/circular"
+        android:padding="5dp"
+        android:background="@drawable/ripple_effect"
+        app:layout_constraintStart_toEndOf="@+id/price_food_to_add"
+        app:layout_constraintTop_toBottomOf="@+id/name_food_to_add" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/add_Food_finally_btn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@drawable/ripple_effect"
+        android:fontFamily="@font/failing_sky"
+        android:layout_marginTop="10dp"
+        android:text="Add Food"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_new_food_layout"
+        android:visibility="gone"/>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+

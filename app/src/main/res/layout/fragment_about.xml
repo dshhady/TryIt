@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="600dp"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/about_background"
+    tools:context=".ui.AboutFragment"
+    android:focusable="true"
+    android:clickable="true"
+    >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+<ImageView
+    android:id="@+id/exit_about"
+    android:layout_width="20dp"
+    android:layout_height="30dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="10dp"
+    android:src="@drawable/exit_button"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/about_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="About TryIt"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/failing_sky"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/my_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to TryIt, the ultimate food ordering app! We are passionate about making it easy for you to discover and order all kinds of delicious food from our restaurant. Our mission is to provide you with a seamless and enjoyable experience, from browsing our menu to receiving your order."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about_title"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/failing_sky"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        />
+
+    <TextView
+        android:id="@+id/registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registration"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/failing_sky"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_app" />
+
+    <TextView
+        android:id="@+id/registration_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To get started with TryIt, simply sign up using your email address. Once you've created an account, you can log in anytime using your signup email."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/failing_sky"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        />
+
+    <TextView
+        android:id="@+id/main_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main Page"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/failing_sky"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_text" />
+    <TextView
+        android:id="@+id/main_page_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Once you've signed up with TryIt, you'll have access to our main menu. From there, you can choose your meal by category, search for specific dishes, or view our full menu. Our user-friendly interface makes it easy for you to customize your order."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_page"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/failing_sky"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        />
+
+    <TextView
+        android:id="@+id/ordering"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ordering"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/failing_sky"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_page_text" />
+
+    <TextView
+        android:id="@+id/ordering_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Once you've found the perfect meal, simply add it to your cart. You can then customize your order by adding or removing items, or by changing the quantity of each item. Once you're ready to place your order, simply click the checkout button."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ordering"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/failing_sky"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        />
+
+    <TextView
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/failing_sky"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ordering_text" />
+
+    <TextView
+        android:id="@+id/profile_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The profile fragment allows you to view and manage your personal information within the app. You can see your username, email, and profile image, and easily edit any of these details by clicking on the edit button next to each row."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/failing_sky"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+<ImageView
+    android:id="@+id/imageCart"
+    android:layout_width="120dp"
+    android:layout_height= "120dp"
+    android:clickable="true"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:src="@drawable/menu_burger"
+    android:background="@drawable/et_style"
+    ></ImageView>
+
+    <TextView
+        android:textSize="20dp"
+        android:id="@+id/foodName_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Food Name"
+        android:fontFamily="@font/circular"
+        app:layout_constraintStart_toEndOf="@+id/imageCart"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+    <TextView
+        android:id="@+id/foodPrice_tv"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/circular"
+        app:layout_constraintTop_toBottomOf="@+id/foodName_tv"
+        app:layout_constraintStart_toEndOf="@+id/imageCart"
+        android:layout_marginLeft="20dp"
+        android:text="Food Price"
+        ></TextView>
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/remove_icon"
+        android:layout_margin="5dp"
+        android:id="@+id/remove_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        ></ImageView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            app:layout_constraintStart_toEndOf="@+id/foodPrice_tv"
+            app:layout_constraintTop_toBottomOf="@+id/foodPrice_tv"
+            android:background="@drawable/et_style"
+            >
+            <ImageView
+                android:id="@+id/minus_button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/minus_quantity"
+                app:layout_constraintEnd_toStartOf="@+id/quantity_tv"
+                app:layout_constraintTop_toBottomOf="@+id/foodPrice_tv"
+                app:tint="@color/TryIt_main_color"
+
+                ></ImageView>
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:text="1"
+            android:id="@+id/quantity_tv"
+            android:gravity="center"
+            android:background="@drawable/et_style"
+            android:fontFamily="@font/circular"
+            app:layout_constraintStart_toEndOf="@+id/foodPrice_tv"
+            app:layout_constraintTop_toBottomOf="@+id/foodPrice_tv"
+            ></TextView>
+
+
+        <ImageView
+            android:id="@+id/plus_button"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/plus_quantity"
+            app:layout_constraintStart_toEndOf="@+id/quantity_tv"
+            app:layout_constraintTop_toBottomOf="@+id/foodPrice_tv"
+            app:tint="@color/TryIt_main_color"
+            ></ImageView>
+        </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.MainActivity"
+    android:background="@color/TryIt_dark_white"
+    android:focusable="true"
+    android:clickable="true"
+    >
+
+    <TextView
+        android:id="@+id/my_profile_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Profile"
+        android:textColor="@color/TryIt_main_color"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/circular"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        ></TextView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image_iv"
+        android:background="@drawable/et_style"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_profile_tv"
+        android:src="@drawable/hungry_man"
+        ></de.hdodenhof.circleimageview.CircleImageView>
+    <TextView
+        android:id="@+id/change_profile_image_tv"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Change profile image"
+        android:textColor="@color/TryIt_main_color"
+        android:textSize="10sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/circular"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image_iv"
+        android:drawableEnd="@drawable/edit_image_profile_image"
+        ></TextView>
+
+    <TextView
+        android:drawableStart="@drawable/user_name_icon"
+        android:id="@+id/user_name_tv"
+        android:ems="10"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:fontFamily="@font/circular"
+        android:background="@drawable/et_style"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image_iv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="User name"
+        android:padding="15dp"
+        android:drawableTint="@color/TryIt_main_color"
+        ></TextView>
+    <TextView
+        android:drawableStart="@drawable/email_icon"
+        android:id="@+id/email_tv"
+        android:ems="10"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:fontFamily="@font/circular"
+        android:background="@drawable/et_style"
+        app:layout_constraintTop_toBottomOf="@+id/user_name_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Email"
+        android:padding="15dp"
+        android:drawableTint="@color/TryIt_main_color"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/password_tv"
+        android:ems="10"
+        android:textSize="20sp"
+        android:drawableStart="@drawable/password_lock_icon"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:fontFamily="@font/circular"
+        android:background="@drawable/et_style"
+        app:layout_constraintTop_toBottomOf="@+id/email_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Password"
+        android:inputType="textPassword"
+        android:drawableTint="@color/TryIt_main_color"
+        android:padding="15dp"
+        ></TextView>
+
+    <ImageView
+        android:id="@+id/edit_user_name_btn"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:src="@drawable/edit_profile_icon"
+        app:layout_constraintTop_toTopOf="@+id/user_name_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/user_name_tv"
+        app:layout_constraintEnd_toEndOf="@+id/user_name_tv"
+        android:layout_margin="10dp"
+        android:background="@drawable/eye_icon_ripple"
+        ></ImageView>
+    <ImageView
+        android:id="@+id/edit_email_btn"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:src="@drawable/edit_profile_icon"
+        app:layout_constraintTop_toTopOf="@+id/email_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/email_tv"
+        app:layout_constraintEnd_toEndOf="@+id/email_tv"
+        android:layout_margin="10dp"
+        android:background="@drawable/eye_icon_ripple"
+        ></ImageView>
+    <ImageView
+        android:id="@+id/edit_password_btn"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:src="@drawable/edit_profile_icon"
+        app:layout_constraintTop_toTopOf="@+id/password_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/password_tv"
+        app:layout_constraintEnd_toEndOf="@+id/password_tv"
+        android:layout_margin="10dp"
+        android:background="@drawable/eye_icon_ripple"
+        ></ImageView>
+
+    <TextView
+        android:id="@+id/log_out_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:gravity="center"
+        android:fontFamily="@font/circular"
+        android:background="@drawable/et_style"
+        app:layout_constraintTop_toBottomOf="@+id/password_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Log out"
+        android:padding="15dp"
+        android:drawableTint="@color/TryIt_main_color"
+        android:drawableStart="@drawable/log_out"
+        ></TextView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

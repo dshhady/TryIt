@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SignInActivity"
+    android:background="@color/white"
+    >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+        <ImageView
+            android:id="@+id/tryIt_logo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/fulllogo_transparent_nobuffer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="100dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            ></ImageView>
+
+
+
+
+    <EditText
+        android:id="@+id/userName_or_Email_edit_text"
+        android:background="@drawable/et_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/mail_icon"
+        android:drawableTint="@color/TryIt_main_color"
+        android:cursorVisible="false"
+        android:textColorHint="#8D000000"
+        app:layout_constraintTop_toBottomOf="@+id/tryIt_logo"
+        android:hint="Username or Email"
+        android:ems="10"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="32dp"
+        android:padding="8dp"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/circular"
+        ></EditText>
+ <EditText
+     android:id="@+id/password_edit_text"
+     android:background="@drawable/et_style"
+     android:inputType="textPassword"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:drawableStart="@drawable/password_icon"
+     android:drawableTint="@color/TryIt_main_color"
+     android:cursorVisible="false"
+     android:textColorHint="#8D000000"
+     app:layout_constraintTop_toBottomOf="@+id/userName_or_Email_edit_text"
+     android:hint="Password"
+     android:ems="10"
+     android:layout_marginTop="32dp"
+     android:layout_marginHorizontal="10dp"
+     android:padding="8dp"
+     android:drawablePadding="16dp"
+     android:fontFamily="@font/circular"
+     ></EditText>
+
+    <TextView
+        android:id="@+id/log_in_btn"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:fontFamily="@font/circular"
+        app:layout_constraintTop_toBottomOf="@+id/password_edit_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/login_ripple_effect"
+        android:text="Login"
+        android:textSize="20sp"
+        android:textColor="@color/TryIt_dark_white"
+        ></TextView>
+
+
+
+    <TextView
+        android:id="@+id/sign_up_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:drawableEnd="@drawable/sign_up_icon"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/log_in_btn"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        ></TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
+
+ <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/sign_up_fragment_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        ></androidx.fragment.app.FragmentContainerView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/food_item_bg"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                app:civ_border_width="2dp"
+                app:civ_border_color="#79AEA9A7"
+                android:id="@+id/foodImage_iv"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/pepperonu_pizza"
+                android:background="@drawable/et_style"
+                android:focusable="true"
+                />
+            <TextView
+                android:id="@+id/foodName_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food Name"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/foodImage_iv"
+                app:layout_constraintTop_toTopOf="@+id/foodImage_iv"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                />
+            <TextView
+                android:id="@+id/foodPrice_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time to Prep"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/foodImage_iv"
+                app:layout_constraintTop_toBottomOf="@id/foodName_tv"
+                android:layout_marginStart="10dp"
+                />
+
+            <!--            <TextView
+                android:id="@+id/tv_Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/foodImage_iv"
+                app:layout_constraintTop_toBottomOf="@id/foodPrice_tv"
+                android:layout_marginStart="10dp"
+                />-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@+id/foodImage_iv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="10dp"
+                android:id="@+id/data"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="calories"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/tv_calories"
+                    android:layout_gravity="center"/>
+
+                <ImageView
+                    android:id="@+id/iv_calories"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/calories_icon" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:padding="5dp"
+                android:id="@+id/add_button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/add_to_cart_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/TryIt_main_color"
+                android:background="@drawable/ripple_effect"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

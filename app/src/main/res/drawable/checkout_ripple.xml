@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/white">
+    <item android:id="@android:id/accessibilityActionContextClick">
+        <shape android:shape="rectangle"
+            android:thickness="@android:dimen/app_icon_size">
+            <corners android:radius="20dp" />
+            <solid android:color="#f54748" />
+        </shape>
+    </item>
+
+</ripple>
