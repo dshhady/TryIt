@@ -5,6 +5,10 @@ Description
 TryIt is a mobile app that allows users to order and discover food from local restaurants. It is a perfect fit for fast food restaurants that want to offer a convenient ordering experience to their customers.
 
 Screenshots
+![image](https://user-images.githubusercontent.com/96915213/229168288-fec3a549-8705-40b3-ae82-22235ebfced8.png)
+![image](https://user-images.githubusercontent.com/96915213/229168336-ff478efb-12b3-4dd7-9f9c-e82c8f87fb60.png)
+![image](https://user-images.githubusercontent.com/96915213/229168369-8624c771-ca7f-4033-8267-7375a29f948b.png)
+![image](https://user-images.githubusercontent.com/96915213/229168404-6e785c3e-099e-416f-8623-c22ed97f5cdd.png)
 ![image](https://user-images.githubusercontent.com/96915213/229168061-33b0cb06-69ce-499e-bf5b-33aaf69bad6e.png)
 
 
