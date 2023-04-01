@@ -15,5 +15,15 @@ Admin Aria is a special area for the admin of the app called Edit Menu , in this
 
 
 ## Features
-[Insert a list of the features of your app here. This should be a bullet-pointed list that covers the main functionality of your app.]
+    User registration and login.
+    Ability to browse and search for items.
+    View detailed information for each item including images and descriptions
+    Integration with external APIs to provide additional information and features
+    A main menu screen that displays all available categories of food (burger, pizza, shawarma, etc.) for easy navigation
+    A sub-menu for each food category that displays all available menu items
+    User profiles with order history, favorite menu items, and saved payment methods for a more personalized experience.
+    User profile page that displays user information including username, email, and profile picture
+    Option to edit user information such as email, password, and profile picture
+    Option to log out manually from the user profile page or from any screen in the app
+    Option to stay logged in for a set amount of time (e.g. 1 hour) after app exit or inactivity to prevent frequent logins
 
