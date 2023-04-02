@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.content.res.ResourcesCompat
 import com.example.burgerapp.R
-import com.example.burgerapp.managers.EncryptionManager
+import com.example.burgerapp.managers.ValidationManager
 import com.example.burgerapp.model.USER_TYPE
 import com.example.burgerapp.model.User
 import com.example.burgerapp.viewModel.UsersViewModel
@@ -25,7 +25,7 @@ class SignInActivity : AppCompatActivity() {
      private val usersViewModel : UsersViewModel by viewModels()
      var userId : Int = 0 //user id will be used to get the user data from the database
      private lateinit var userType : USER_TYPE //user type will be used to check if the user is admin or not
-     private val adminUser = User("admin","admin@gmail.com",EncryptionManager.encryption("1234"), userType = USER_TYPE.ADMIN) //userId will be 1
+     private val adminUser = User("admin","admin@gmail.com",ValidationManager.encryption("1234"), userType = USER_TYPE.ADMIN) //userId will be 1
      private lateinit var sharedPreferences: SharedPreferences
 
 
@@ -88,7 +88,7 @@ class SignInActivity : AppCompatActivity() {
         for (user in users) {
             if ((user.userName == userName_or_Email_edit_text.text.toString() ||
                         user.email == userName_or_Email_edit_text.text.toString()) &&
-                EncryptionManager.comparePasswordEncrypt(user.password, password_edit_text.text.toString())) {
+                ValidationManager.comparePasswordEncrypt(user.password, password_edit_text.text.toString())) {
                 flag = true
                 userId = user.id
             }

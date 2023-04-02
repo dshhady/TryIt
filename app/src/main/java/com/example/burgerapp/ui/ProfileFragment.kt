@@ -20,7 +20,7 @@ import com.bumptech.glide.Glide
 import com.example.burgerapp.R
 import com.example.burgerapp.api.ApiInterface
 import com.example.burgerapp.api.ApiResponseHitsList
-import com.example.burgerapp.managers.EncryptionManager
+import com.example.burgerapp.managers.ValidationManager
 import com.example.burgerapp.model.USER_TYPE
 import com.example.burgerapp.model.User
 import com.example.burgerapp.viewModel.UsersViewModel
@@ -32,7 +32,7 @@ import retrofit2.Call
 import retrofit2.Response
 
 
-class ProfileFragment(private val userId : Int, private val userType: USER_TYPE) : Fragment() {
+class ProfileFragment(private val userId : Int, private val userType: USER_TYPE,private val allUsers: List<User>) : Fragment() {
 
     val usersViewModel : UsersViewModel by viewModels()
     lateinit var currentUser: User // the current user
@@ -95,6 +95,7 @@ class ProfileFragment(private val userId : Int, private val userType: USER_TYPE)
             if (userType == USER_TYPE.ADMIN)
                 Toast.makeText(requireActivity(), "Admin can't edit password", Toast.LENGTH_SHORT).show()
             else
+                
             editProfilePasswordAlertDialog(userId)
         }
         change_profile_image_tv.setOnClickListener {
@@ -111,7 +112,17 @@ class ProfileFragment(private val userId : Int, private val userType: USER_TYPE)
         input.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
         builder.setView(input)
         builder.setPositiveButton("OK") { dialog, which ->
-            usersViewModel.updateUserEmail(userId, input.text.toString())
+            if(!android.util.Patterns.EMAIL_ADDRESS.matcher(input.text.toString()).matches()) { //check if the email is valid
+                Toast.makeText(activity, "Please enter a valid email", Toast.LENGTH_SHORT).show()
+                return@setPositiveButton
+            }
+            for(user in allUsers){
+                if(user.email == input.text.toString()){ //check if the user name or the email already exists
+                    Toast.makeText(activity, "User with this email already exists", Toast.LENGTH_SHORT).show()
+                    return@setPositiveButton
+                }
+            }
+            usersViewModel.updateUserEmail(userId, input.text.toString()) // if the code reached here it means that the email is valid
             currentUser.email = input.text.toString()
             email_tv.text = input.text.toString()
             Toast.makeText(activity, "Email changed", Toast.LENGTH_SHORT).show()
@@ -127,7 +138,17 @@ class ProfileFragment(private val userId : Int, private val userType: USER_TYPE)
         input.inputType = InputType.TYPE_CLASS_TEXT
         builder.setView(input)
         builder.setPositiveButton("OK") { dialog, which ->
-            usersViewModel.updateUserName(userId, input.text.toString())
+            if(!ValidationManager.isValidUsername(input.text.toString())){ //check if the user name or the email already exists
+                Toast.makeText(activity, "User name must be between 4 and 20 characters and start with a letter", Toast.LENGTH_SHORT).show()
+                return@setPositiveButton
+            }
+            for(user in allUsers){
+                if(user.userName == input.text.toString()){ //check if the user name or the email already exists
+                    Toast.makeText(activity, "User with this User name already exists", Toast.LENGTH_SHORT).show()
+                      return@setPositiveButton
+                     }
+                }
+            usersViewModel.updateUserName(userId, input.text.toString()) // if the code reached here it means that the user name is valid
             currentUser.userName = input.text.toString()
             user_name_tv.text = input.text.toString()
             Toast.makeText(activity, "User name changed", Toast.LENGTH_SHORT).show()
@@ -143,7 +164,7 @@ class ProfileFragment(private val userId : Int, private val userType: USER_TYPE)
         input.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
         builder.setView(input)
         builder.setPositiveButton("OK") { dialog, which ->
-            usersViewModel.updateUserPassword(userId, EncryptionManager.encryption(input.text.toString()))
+            usersViewModel.updateUserPassword(userId, ValidationManager.encryption(input.text.toString()))
             currentUser.password = input.text.toString()
             password_tv.text = input.text.toString()
             Toast.makeText(activity, "Password changed", Toast.LENGTH_SHORT).show()

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.example.burgerapp.R
-import com.example.burgerapp.managers.EncryptionManager
+import com.example.burgerapp.managers.ValidationManager
 import com.example.burgerapp.model.User
 import com.example.burgerapp.viewModel.UsersViewModel
 import kotlinx.android.synthetic.main.fragment_sign_up.*
@@ -63,12 +63,17 @@ class SignUpFragment (private val allUsers: List<User>): Fragment() {
                         return
                     }
                     else
+                        if(!ValidationManager.isValidUsername(userName)){ //check if the user name or the email already exists
+                            Toast.makeText(activity, "User name must be between 4 and 20 characters and start with a letter", Toast.LENGTH_SHORT).show()
+                            return
+                        }
+                    else
                         if(user.email == email){ //check if the user name or the email already exists
                             Toast.makeText(activity, "User with this Email already exists", Toast.LENGTH_SHORT).show()
                             return
                         }
                 }
-                        GlobalScope.launch (Dispatchers.IO){ usersViewModel.addUser(User(userName, email, EncryptionManager.encryption(password))) }//add the user to the database
+                        GlobalScope.launch (Dispatchers.IO){ usersViewModel.addUser(User(userName, email, ValidationManager.encryption(password))) }//add the user to the database
                         Toast.makeText(activity, "User created Successfully", Toast.LENGTH_SHORT).show()
     }
 }

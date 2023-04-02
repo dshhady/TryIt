@@ -15,6 +15,7 @@ import com.example.burgerapp.adapters.searchListAdapter
 import com.example.burgerapp.viewModel.CartViewModel
 import com.example.burgerapp.viewModel.FoodViewModel
 import com.example.burgerapp.viewModel.TypeViewModel
+import com.example.burgerapp.viewModel.UsersViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private val typeViewModel : TypeViewModel by viewModels()
     private val foodViewModel   : FoodViewModel by viewModels()
     private val cartViewModel   : CartViewModel by viewModels()
+    private val usersViewModel  : UsersViewModel by viewModels()
     var allFoodList : MutableList<Food> = mutableListOf() // List of the full menu
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean { // create About button
@@ -52,7 +54,6 @@ class MainActivity : AppCompatActivity() {
         typeViewModel.typesData.observe(this) {
             createFoodTypesRecyclerView(it,userId) // create the food types recycler view
         }
-
         onFullMenuClick(userId) // open the full menu fragment
         bottomNavBar(userId,userType) // bottom navigation bar implementation
     }
@@ -169,7 +170,9 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.profile_nav -> {
-                    openFragment(ProfileFragment(userId,userType))
+                    usersViewModel.usersData.observe(this){
+                        openFragment(ProfileFragment(userId,userType,it))
+                    }
                     true
                 }
                 R.id.cart_nav -> {
@@ -180,6 +183,11 @@ class MainActivity : AppCompatActivity() {
                     popAllFragments()
                     true
                 }
+                full_menu_btn.id -> {
+                    openFragment(FoodListFragment(userId,Etype.OTHER,true))
+                    false
+                }
+
                 else -> false
             }
         }
